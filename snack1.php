@@ -8,7 +8,7 @@ Stampiamo a schermo tutte le partite con questo schema.
 
  <?php 
 //  Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario.
-    $basketTeams = [
+    $basketTeams = array(
         [
            "home" => [
                 "name" => "Milano",
@@ -29,5 +29,18 @@ Stampiamo a schermo tutte le partite con questo schema.
                  "score" => 50
             ]
         ],
-    ]
-  ?>
+    );
+    // Stampiamo a schermo tutte le partite con questo schema.
+        // Olimpia Milano - Cantù | 55-60
+    foreach($basketTeams as $match): ?>
+    <div>
+    <?= "{$match["home"]["name"]}"?>
+     VS <?= "{$match["opponents"]["name"]}"?>
+    |
+    <?= "{$match["home"]["score"]}"?>
+     - <?= "{$match["opponents"]["score"]}"?>
+    </div>
+    <? endforeach ?>
+
+
+
