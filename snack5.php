@@ -45,13 +45,13 @@ foreach ($classe as $alunno) : ?>
  <p><?php echo "{$alunno["cognome"]}"?></p>
  <p><?php 
  $count = count($alunno["voti"]);
- $somma = 0;
- foreach($alunno["voti"] as $voto){
-  $somma += $voto;
- };
+ 
+
+  $somma = array_sum($alunno["voti"]);
+
 //  echo "$somma" / "$count";
 $media =($somma / $count);
-  echo "(round($media, 2))";
+  echo (round($media, 2));
  ?></p>
  </div>
 <?php endforeach ?>
